@@ -16,6 +16,8 @@ document.addEventListener('mousemove', (event) => {
 
   const inputValue = document.querySelector('input[name="name"]').value.toLowerCase().trim();
   if (inputValue === "chinu") {
+    // window.location.href = 'candles.html';
+    goodSound.play();
     window.location.href = 'candles.html';
     return;
   }
@@ -32,7 +34,7 @@ document.addEventListener('mousemove', (event) => {
   else {
     questionHeading.textContent = "Who is this?";
     document.body.style.cursor = "none";
-    badSound.play();
+    // badSound.play();
     
   }
 

@@ -6,9 +6,9 @@ button {
   padding: 0.75rem 1.25rem;
   border: 0;
   border-radius: 4px;
-  background-color: hsl(218deg 92% 57%);
+  background-color: #b37c27;
   color: #fff;
-  user-select: none;
+  /* user-select: none; */
   font-size: 1rem;
   transform-style: preserve-3d;
   z-index: 10;
@@ -24,13 +24,13 @@ button:after {
   height: 100%;
   z-index: -1;
   border-radius: 4px;
-  background-color: hsl(218deg 92% 35%);
+  background-color: #b37c27;
   transform: translateZ( -5px );
     z-index: 10;
 }
 
 button:after {
-  background-color: hsl(218deg 92% 20%);
+  background-color: #b37c27;
   transform: translateZ( -10px );
     z-index: 10;
 }
