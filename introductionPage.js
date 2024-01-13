@@ -5,13 +5,16 @@ const distanceBetween = (p1x, p1y, p2x, p2y) => {
   return Math.sqrt(dx * dx + dy * dy);
 };
 
+goodSound = new Audio("https://s3-us-west-2.amazonaws.com/s.cdpn.io/74196/goodbell.mp3"),
+badSound = new Audio("https://s3-us-west-2.amazonaws.com/s.cdpn.io/74196/bad.mp3"),
+
 
 
 document.addEventListener('mousemove', (event) => {
   const questionHeading = document.querySelector('.question')
   // .value.toLowerCase();
 
-  const inputValue = document.querySelector('input[name="name"]').value.toLowerCase();
+  const inputValue = document.querySelector('input[name="name"]').value.toLowerCase().trim();
   if (inputValue === "chinu") {
     window.location.href = 'candles.html';
     return;
@@ -19,16 +22,17 @@ document.addEventListener('mousemove', (event) => {
 
   const comparisonString1 = "nikita";
   const comparisonString2 = "niki";
-  if (inputValue.includes(comparisonString1.toLowerCase())) {
+  if (inputValue.includes(comparisonString1.toLowerCase().trim())) {
     questionHeading.textContent = "Are you sure?";
   } 
-  else if (inputValue.includes(comparisonString2.toLowerCase()))
+  else if (inputValue.includes(comparisonString2.toLowerCase().trim()))
   {
     questionHeading.textContent = "Come on!";
   }
   else {
     questionHeading.textContent = "Who is this?";
     document.body.style.cursor = "none";
+    badSound.play();
     
   }
 

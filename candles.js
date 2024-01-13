@@ -119,24 +119,31 @@ const animate = () => {
         requestAnimationFrame(animate);
         ctx.clearRect(0, 0, cw, ch);
 
-        // Smother flame if user is blowing
+        
         if (microphone && isBlowing()) {
             if (particleCount > -MAX_PART_DOWNTIME) {
                 particleCount -= 1;
             } else {
-                animationStopped = true; // Stop the animation when the flame is completely extinguished
+                animationStopped = true; 
                 const titleElement = document.getElementById('title');
+                const title1Element = document.getElementById('title1');
+                const confettiElement = document.querySelector('.confetti');
+                confettiElement.style.display = 'flex';
                 sound.play();
-                titleElement.style.visibility = 'visible'; // Make the text visible
+                titleElement.style.visibility = 'visible'; 
                 setTimeout(() => {
-                    titleElement.style.bottom = '50px'; // Move the text up after a delay
+                    titleElement.style.bottom = '50px'; 
                 }, 100);
+                title1Element.style.visibility = 'visible';
+                setTimeout(()=>{
+                    title1Element.style.top = '200px';
+                }, 300);
 
             }
         }
 
         // draw flame
-        updateParticles();
+        updateParticles();w
 
         // draw base
         base.update();
