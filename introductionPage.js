@@ -15,10 +15,11 @@ document.addEventListener('mousemove', (event) => {
   // .value.toLowerCase();
 
   const inputValue = document.querySelector('input[name="name"]').value.toLowerCase().trim();
-  if (inputValue === "chinu") {
+  if (inputValue === "chinu" || inputValue === "aryash" || inputValue === "jahnvi") {
     // window.location.href = 'candles.html';
     goodSound.play();
-    window.location.href = 'candles.html';
+    // window.location.href = 'candles.html';
+    window.location.href = '../14Feb/feb14.html'
     return;
   }
 
